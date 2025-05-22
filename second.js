@@ -11,19 +11,25 @@
 
 const userChoice = prompt('Choose your weapon: sten, sax eller påse'); // möjliga värden: 'sten', 'sax' eller 'påse'
 
-let computerChoice; 
+
 
 function selectComputerWeapon() {
     const randomNumber = Math.floor(Math.random() * 3); // Slumpa ett tal mellan 0-3 Math.floor rundar neråt därför kommer vi aldrig kunna få talet 3 utan det är mellan 0,1 och 2 det ska representera sten sax ohc påse.
-if (randomNumber == 0) {
-    computerChoice = 'sten'; 
+    const computerWeapons = ['sten', 'sax', 'påse'];
 
-} else if (randomNumber == 1){
-    computerChoice = 'sax';
+    const selectedComputerWeapon = computerWeapons [randomNumber];
 
-} else if (randomNumber == 2){
-    computerChoice = 'påse';
-} 
+    return selectedComputerWeapon; 
+// array ovan - if sats under 
+//     if (randomNumber == 0) {
+//     return 'sten';
+
+// } else if (randomNumber == 1){
+//     return 'sax';
+
+// } else if (randomNumber == 2){
+//     return 'påse';
+// } 
 }
 
 function determineWinner(){
@@ -59,7 +65,7 @@ function determineWinner(){
 
 
 
-selectComputerWeapon();
+let computerChoice =  selectComputerWeapon();
 
 console.log('Användarens val: ', userChoice);
 console.log('Datorns val: ', computerChoice); 
